@@ -1,6 +1,23 @@
-server:
-  port: 8080
-
 spring:
-  main:
-    web-application-type: servlet
+  datasource:
+    url: jdbc:postgresql://localhost:5332/yourDatabaseName
+    username: amigoscode
+    password: password
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+
+  profiles:
+    active: dev
+
+logging:
+  level:
+    org:
+      springframework:
+        web: DEBUG
