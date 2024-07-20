@@ -7,7 +7,7 @@ In this repository I am going to share what I'm learning so that it can be usefu
 ## Roadmap
 
 - Download an Integrated Development Environment(In this case I'm going to use IntelliJ Idea)
-- Install a Java Development Kit(version 17 or above)
+- Install and configure a Java Development Kit(version 17 or above)
 - After create a project, create a new class called Main
 - Configure your pom.xml file
 - Include @SpringBootApplication above your Main class declaration
