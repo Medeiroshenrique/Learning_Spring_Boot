@@ -1,8 +1,30 @@
 package com.henriquemedeiros;
 
+import jakarta.persistence.*;
+
 import java.util.Objects;
 
+@Entity
 public class Customer {
+    @Id
+    @SequenceGenerator(
+            name = "customer_id_sequence",
+            sequenceName = "customer_id_sequence"
+    )
+    //Notations after browsing what it does(this details are not in the class):
+    //SequenceGenerator defines a primary key generator that uses a database sequence. It has two attributes:
+    //name(that's the name of the sequence generator) and sequenceName(The name of the database sequence,
+    // in this case is also "customer_id_sequence")
+    @GeneratedValue(
+            strategy = GenerationType.SEQUENCE,
+            generator = "customer_id_sequence"
+    )
+    //This annotations specifies how the primary key should be generated. It has two attributes:
+    //-->strategy= The strategy to be used for generating the primary key, that is GenerationType.SEQUENCE that says that the
+    //sequence should be generated using a database sequence;
+    //-->generator= The name of the sequence generator to be used, which matches the name in the @SequenceGenerator
+    //annotation ("customer_id_sequence").
+
     private Integer id;
     private String name;
     private Integer age;
